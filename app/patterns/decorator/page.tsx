@@ -86,7 +86,11 @@ const decoratorEdges: Edge[] = [
     target: 'base',
     label: 'implements',
     animated: false,
-    style: { stroke: '#f59e0b', strokeWidth: 2, strokeDasharray: '5,5' },
+    style: {
+      stroke: '#f59e0b',
+      strokeWidth: 2,
+      strokeDasharray: '5,5',
+    },
     labelStyle: { fill: '#d97706', fontWeight: 600 },
   },
   {
@@ -104,7 +108,11 @@ const decoratorEdges: Edge[] = [
     target: 'dec1',
     label: 'extends',
     animated: false,
-    style: { stroke: '#6366f1', strokeWidth: 2, strokeDasharray: '5,5' },
+    style: {
+      stroke: '#6366f1',
+      strokeWidth: 2,
+      strokeDasharray: '5,5',
+    },
     labelStyle: { fill: '#4f46e5', fontWeight: 600 },
   },
   {
@@ -113,7 +121,11 @@ const decoratorEdges: Edge[] = [
     target: 'dec2',
     label: 'extends',
     animated: false,
-    style: { stroke: '#6366f1', strokeWidth: 2, strokeDasharray: '5,5' },
+    style: {
+      stroke: '#6366f1',
+      strokeWidth: 2,
+      strokeDasharray: '5,5',
+    },
     labelStyle: { fill: '#4f46e5', fontWeight: 600 },
   },
 ];
@@ -126,8 +138,11 @@ export default function DecoratorPatternPage() {
           Decorator Pattern
         </h1>
         <p className="text-lg text-slate-600 max-w-3xl">
-          The Decorator Pattern attaches additional responsibilities to an object dynamically. 
-          Decorators provide a flexible alternative to subclassing for extending functionality. It's like wrapping an object in layers of onions!
+          The Decorator Pattern attaches additional
+          responsibilities to an object dynamically.
+          Decorators provide a flexible alternative to
+          subclassing for extending functionality. It's like
+          wrapping an object in layers of onions!
         </p>
       </div>
 
@@ -140,34 +155,62 @@ export default function DecoratorPatternPage() {
           />
         </div>
       </div>
-      
+
       <div className="mt-12 bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
-        <h3 className="text-xl font-bold text-indigo-900 mb-4">How it works</h3>
+        <h3 className="text-xl font-bold text-indigo-900 mb-4">
+          How it works
+        </h3>
         <ul className="space-y-3 text-indigo-800">
           <li className="flex items-start">
-            <span className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-200 flex items-center justify-center text-sm font-bold mt-0.5 mr-3">1</span>
-            <span>You start with a core <strong>Component</strong> interface (e.g., Coffee) and a concrete core class (SimpleCoffee).</span>
+            <span className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-200 flex items-center justify-center text-sm font-bold mt-0.5 mr-3">
+              1
+            </span>
+            <span>
+              You start with a core{' '}
+              <strong>Component</strong> interface (e.g.,
+              Coffee) and a concrete core class
+              (SimpleCoffee).
+            </span>
           </li>
           <li className="flex items-start">
-            <span className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-200 flex items-center justify-center text-sm font-bold mt-0.5 mr-3">2</span>
-            <span>You create a <strong>Decorator</strong> that both *implements* the Component interface AND *holds a reference* to a Component inside itself.</span>
+            <span className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-200 flex items-center justify-center text-sm font-bold mt-0.5 mr-3">
+              2
+            </span>
+            <span>
+              You create a <strong>Decorator</strong> that
+              both *implements* the Component interface AND
+              *holds a reference* to a Component inside
+              itself.
+            </span>
           </li>
           <li className="flex items-start">
-            <span className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-200 flex items-center justify-center text-sm font-bold mt-0.5 mr-3">3</span>
-            <span>Concrete Decorators (Milk, Whip) wrap the inner component, executing their own behavior before or after delegating to the inner component (e.g., adding milk cost to the base cost).</span>
+            <span className="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-200 flex items-center justify-center text-sm font-bold mt-0.5 mr-3">
+              3
+            </span>
+            <span>
+              Concrete Decorators (Milk, Whip) wrap the
+              inner component, executing their own behavior
+              before or after delegating to the inner
+              component (e.g., adding milk cost to the base
+              cost).
+            </span>
           </li>
         </ul>
       </div>
 
       <div className="mt-12 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
-        <h3 className="text-xl font-bold text-slate-900 mb-6">TypeScript Implementation</h3>
+        <h3 className="text-xl font-bold text-slate-900 mb-6">
+          TypeScript Implementation
+        </h3>
         <p className="text-slate-600 mb-4">
-          Here is how you wrap a base coffee order with dynamic add-ons using the Decorator Pattern at runtime.
+          Here is how you wrap a base coffee order with
+          dynamic add-ons using the Decorator Pattern at
+          runtime.
         </p>
         <div className="bg-slate-900 rounded-xl p-6 overflow-x-auto">
           <pre className="text-sm font-mono text-slate-300 leading-relaxed">
             <code>
-{\`// 1. The Component Interface
+              {`// 1. The Component Interface
 interface Coffee {
   getCost(): number;
   getDescription(): string;
@@ -216,6 +259,13 @@ console.log(myOrder.getDescription() + " $" + myOrder.getCost());
 myOrder = new WhipDecorator(myOrder);
 console.log(myOrder.getDescription() + " $" + myOrder.getCost()); 
 // Output: Simple Coffee, Milk, Whip $3.2\`}
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  );
+}`}
             </code>
           </pre>
         </div>
